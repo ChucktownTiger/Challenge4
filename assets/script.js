@@ -203,7 +203,7 @@ document.getElementById("reloadpage").onclick = function(){
     location.href="https://chucktowntiger.github.io/Challenge4/"
 }
 
-HighscoreBtn.addEventListener("click", HighscoresD)
+HighscoreBtn.addEventListener("click", HighscoresD);
 
 
 
