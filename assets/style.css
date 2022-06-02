@@ -103,4 +103,11 @@ li {
     display: none;
 }
 
+#highscorelist li {
+    align-items: center;
+    padding: 10px 50px;
+    font-size: 18px;
+    font-weight: bold;    
+}
+
 
