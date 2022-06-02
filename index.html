@@ -10,9 +10,8 @@
 </head>
 <body>
     <header>
-        <h1>Quiz time!</h1>
+    <h1>Quiz time!</h1>
     </header>
-
     <!--Opening Page-->
     <section class="top">
         <div>
@@ -22,7 +21,8 @@
             <h2 id="time-left">Timer</h2>
         </div>
     </section>
-    <section id="quiz-start-page">
+    
+    <div id="quiz-start">
         <h2>
             Coding Quiz Challenge
         </h2>
@@ -30,9 +30,9 @@
             Take your time as any wrong answers takes away 5 seconds!
         </p>
         <button type="button" class="btnstyle" id="startbutton"> Begin Quiz!</button>
-
+    </div>
     <!--Question Start-->    
-    </section class="question-class" id="question-id">
+    <section class="question-class" id="question-id">
     </section>
 
     <!-- Reults Page and Initial Entering-->
@@ -41,10 +41,12 @@
         <p class="score-class" id="scoreid" value=""> Congrats Your Score is: </p>
         <span id="name-input">
             <p class="name-class" id="name-id">Enter your Name or Initials: </p>
-            <input id="initials-box" value="" placeholder="   ">
+            <input id="initials-box" value=""  placeholder="   ">
         </span> 
         <button type="button" class="btnstyle" id="submitbtn">Enter Results</button>
     </section>
+
+    <!--High score page and reset to start-->
 
     <section class="highscores" id="highscore-id">
         <h2> High Scores!</h2>

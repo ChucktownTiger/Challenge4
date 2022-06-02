@@ -7,20 +7,41 @@
 
 header {
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    flex: auto;
+    justify-content: space-between;
     color: var(--main-color);
     justify-content: center;
     background-color: var(--background-color);
 }
 
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+
+}
 .top {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     color: var(--second-color);
 }
 
 .question-block {
+    position: absolute;
+    left: 50%;
     max-width: 1000px;
     justify-content: center;
     margin: 0, auto;
@@ -48,3 +69,13 @@ li {
     list-style: none;
     color: var(--second-color);
 }
+
+
+#results-id {
+    display: none;
+}
+
+#highscore-id {
+    display: none;
+}
+
