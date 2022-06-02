@@ -52,8 +52,8 @@ var q3 = {
 
 var q4 = {
     question: "Arrays in JavaScript can be used to store ______.",
-    choices: [ "A. Numbers and strings", "B. Other arrays", "C. All of the above", "D. Booleans",],
-    answer: "C. all of the above",
+    choices: [ "A. Numbers and strings", "B. Other arrays", "C. Booleans", "D. All of the above",],
+    answer: "D. All of the above",
 };
 
 var q5 = {
@@ -108,7 +108,7 @@ var startQuiz = function(){
 var answerCheck = function(event) {
     if (i > 5) return
 
-    if (event.target.textContent === QArray[i].answer && i < 4){
+    if (event.target.textContent === QArray[i].answer && i < 6){
         alert("Correct!!!")
     }else {
         alert("WRONG!!! You lose 5 seconds")
