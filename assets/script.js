@@ -6,7 +6,7 @@ function RemoveStartPage() {
 }
 
 //set timer function
-var time = 69;
+var time = 60;
 
 function Countdown() {
     setInterval(function (){
@@ -25,6 +25,7 @@ var startBtn = document.querySelector("#startbutton");
 var Results = document.querySelector("#results-id")
 var Questions = document.querySelector("#question-id");
 var Highscores = document.querySelector("#highscore-id");
+var HighscoreBtn = document.querySelector("#high-scores")
 var ResetBtn = document.querySelector("#resetscores");
 var SubmiBtn = document.querySelector("#submitbtn");
 var NameInitial = document.querySelector("#initials-box");
@@ -107,7 +108,7 @@ var startQuiz = function(){
 var answerCheck = function(event) {
     if (i > 5) return
 
-    if (event.target.textContent === QArray[i].answer && i < 6){
+    if (event.target.textContent === QArray[i].answer && i < 4){
         alert("Correct!!!")
     }else {
         alert("WRONG!!! You lose 5 seconds")
@@ -115,7 +116,7 @@ var answerCheck = function(event) {
     }
 
     i++;
-    Questions.innerHTML = "";
+    Questions.innerHTML = " ";
     startQuiz();
 }
 
@@ -126,7 +127,7 @@ function endQuiz() {
     qDisplay.style.display = "none"
 
     var resultdisplay =  document.getElementById("results-id") 
-    Results.classList.remove("results-id")
+    Results.classList.remove("results-class")
 
     var countdownDisplay = document.getElementById("time-left")
     countdownDisplay.style.display = "none"
@@ -145,14 +146,14 @@ document.getElementById("reloadpage").onclick = function(){
 function userInitials () {
     if(NameInitial.value === ""){
         return alert ("Please enter Name/Initials must be a min of 1 Character!")
-    }
-}
+    }   
 
 
 var scores = {
     "initial" : NameInitial.value,
     "score" : time
 }
+
 
     var storage = JSON.parse(localStorage.getItem("scores"))
 
@@ -168,29 +169,31 @@ var scores = {
 
     var getStorage = JSON.parse(localStorage.getItem("scores"))
 
-    document.getElementsByClassName("highscores")
-    Highscores.classList.remove("highscores")
-
-    var resultdisplay = document.getElementById("results-id")
-    resultdisplay.style.display= "none"
-    var highscorelist = document.getElementById("highscore-list")
+    var highscorelist = document.getElementById("highscorelist")
 
     getStorage.sort(function(a,b){
         return b.store - a.score
     })
 
-    // for (let i = 0; i < getStorage.length; i++) {
-    //     var highscoreli = document.createElement("li")
-    //     highscorelist.append(highscoreli)
+    for (let i = 0; i < getStorage.length; i++) {
+        var highscoreli = document.createElement("li")
+        highscorelist.append(highscoreli)
 
-    //     highscoreli.textContent = getStorage[i].initial +" " + getStorage[i].score 
-    //     highscoreli.className = "classhighscorelist"
+        highscoreli.textContent = getStorage[i].initial +" " + getStorage[i].score 
+        highscoreli.className = "highscorelist"
 
-    //     document.getElementById("resetscores").onclick = function() {
-    //         localStorage.clear()
-    //         highscoreli.remove(highscoreli)
-    //     }
-    // }
+        document.getElementById("resetscores").onclick = function() {
+            localStorage.clear()
+            highscorelist.remove(highscoreli)
+        }
+    }
+}
+
+var HighscoresD = function(){
+    var highscoredisplay =  document.getElementById("highscore-id") 
+    Highscores.classList.remove("highscores")
+}
+    
 
 startBtn.addEventListener("click", startQuiz)
 
@@ -199,6 +202,8 @@ SubmiBtn.addEventListener("click", userInitials)
 document.getElementById("reloadpage").onclick = function(){
     location.href="https://chucktowntiger.github.io/Challenge4/"
 }
+
+HighscoreBtn.addEventListener("click", HighscoresD)
 
 
 

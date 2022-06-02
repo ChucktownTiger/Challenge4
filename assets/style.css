@@ -70,12 +70,37 @@ li {
     color: var(--second-color);
 }
 
+.btnstyle {
+    background-color: #210da3;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 50%
+}
+.btnstyle2 {
+    background-color: #210da3;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+}
 
-#results-id {
+.results-class {
     display: none;
 }
 
-#highscore-id {
+.highscores {
     display: none;
 }
+
 
